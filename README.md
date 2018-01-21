@@ -14,3 +14,11 @@ Commons unsupervised applications include:
 - Object segmentation (for example, users, products, movies, songs, and so on)
 - Similarity detection
 - Automatic labeling
+
+Common deep learning applications include:
+- Image classification
+- Real-time visual tracking
+- Autonomous car driving
+- Logistic optimization
+- Bioinformatics
+- Speech recognition
