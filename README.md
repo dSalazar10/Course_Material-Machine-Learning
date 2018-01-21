@@ -9,3 +9,8 @@ Common supervised learning applications include:
 - Sentiment analysis
 - Automatic image classification
 - Automatic sequence processing (for example, music or speech)
+
+Commons unsupervised applications include:
+- Object segmentation (for example, users, products, movies, songs, and so on)
+- Similarity detection
+- Automatic labeling
