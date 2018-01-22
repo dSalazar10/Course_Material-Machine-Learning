@@ -46,12 +46,12 @@ Optonal Reading:
 - Coding the Matrix: Linear Algebra through Applications to Computer Science By: P. Klein
 
 Further Reading:
-(Python)
+- (Python)
 - Mastering matplotlib By: Mcgreggor D.
 - Learning pandas - Python Data Discovery and Analysis Made Easy By: Heydt M.
 - Learning Python By: Lutz M.
 - Python 3 Text Processing with NLTK 3 Cookbook By: Perkins J.
-(Machine Learning)
+- (Machine Learning)
 - Artificial Intelligence: A Modern Approach By: Russel S., Norvig P.
 - Deep Learning By: Goodfellow I., Bengio Y., Courville A.
 - How to Create a Mind By: Kurzweil R.
