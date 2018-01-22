@@ -104,7 +104,7 @@ def classification():
     """
     X_train, X_test, y_train, y_test = train_test_split(digits.data, digits.target)
 
-    # Create the mdoel
+    # Create the model
     # Gaussian Naive Bayes Classifier class
     clf = GaussianNB()
     
@@ -112,7 +112,7 @@ def classification():
     # Fit Gaussian Naive Bayes according to X, y
     clf.fit(X_train, y_train)
     
-    # Perform classification to get the estimated data
+    # estimated data
     est = clf.predict(X_test)
     # actual data
     act = y_test
