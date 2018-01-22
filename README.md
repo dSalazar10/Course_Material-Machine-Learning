@@ -1,5 +1,5 @@
 # CS_6820 Machine Learning
-Advanced topics in Artificial Intelligence, including induction, decision trees, ensemble learning; current- best-hypothesis search, knowledge representation, explanation-based learning, relevance information, inductive logic programming; Bayesian networks, instance-based learning; neural networks and genetic algorithms; reinforcement learning, and adaptive dynamic programming.
+# Advanced topics in Artificial Intelligence, including induction, decision trees, ensemble learning; current- best-hypothesis search, knowledge representation, explanation-based learning, relevance information, inductive logic programming; Bayesian networks, instance-based learning; neural networks and genetic algorithms; reinforcement learning, and adaptive dynamic programming.
 
 Topics Including:
 •  Supervised VS Unsupervised learning
