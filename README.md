@@ -1,16 +1,16 @@
 # CS_6820 Machine Learning
-# Advanced topics in Artificial Intelligence, including induction, decision trees, ensemble learning; current- best-hypothesis search, knowledge representation, explanation-based learning, relevance information, inductive logic programming; Bayesian networks, instance-based learning; neural networks and genetic algorithms; reinforcement learning, and adaptive dynamic programming.
+Advanced topics in Artificial Intelligence, including induction, decision trees, ensemble learning; current- best-hypothesis search, knowledge representation, explanation-based learning, relevance information, inductive logic programming; Bayesian networks, instance-based learning; neural networks and genetic algorithms; reinforcement learning, and adaptive dynamic programming.
 
 Topics Including:
-•  Supervised VS Unsupervised learning
-•  Regression VS Classification
-•  Comparing ML solutions to other optimization and classification approaches
-•  Regression techniques
-•  Binary VS Multivariate Classification
-•  Clustering
-•  Support Vector Machines (SVM)
-•  Neural Networks
-•  Deep Learning
+- Supervised VS Unsupervised learning
+- Regression VS Classification
+- Comparing ML solutions to other optimization and classification approaches
+- Regression techniques
+- Binary VS Multivariate Classification
+- Clustering
+- Support Vector Machines (SVM)
+- Neural Networks
+- Deep Learning
 
 Common supervised learning applications include:
 - Predictive analysis based on regression or categorical classification
