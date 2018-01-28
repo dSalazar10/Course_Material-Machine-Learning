@@ -1,0 +1,1 @@
+Usefule for descovering structure.
