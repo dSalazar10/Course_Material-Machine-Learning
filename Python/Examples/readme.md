@@ -1,1 +1,1 @@
-This will hold exmaples of all the types of machine learning algorithms.
+https://en.wikipedia.org/wiki/Outline_of_machine_learning#Machine_learning_algorithms
