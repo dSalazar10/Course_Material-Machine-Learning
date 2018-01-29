@@ -40,6 +40,39 @@ confused for 3 the most.
 http://www.scipy-lectures.org/packages/scikit-learn/#supervised-learning-classification-of-handwritten-digits
 https://matplotlib.org/devdocs/gallery/images_contours_and_fields/interpolation_methods.html
 
+Number of correct matches: 1112
+
+Total number of data points: 1348
+
+Ratio of correct predictions: 0.824925816024
+
+Classification report
+             precision    recall  f1-score   support
+
+          0       1.00      0.96      0.98       128
+          1       0.86      0.61      0.71       142
+          2       0.79      0.81      0.80       132
+          3       0.93      0.63      0.75       135
+          4       0.96      0.82      0.88       143
+          5       0.91      0.91      0.91       138
+          6       0.97      0.96      0.97       139
+          7       0.75      0.98      0.85       128
+          8       0.51      0.89      0.64       132
+          9       0.89      0.71      0.79       131
+
+avg / total       0.86      0.82      0.83      1348
+
+        Confusion matrix
+[[123   1   0   0   4   0   0   0   0   0]
+ [  0  86  11   0   0   2   1   1  39   2]
+ [  0   0 107   1   1   0   2   0  20   1]
+ [  0   1  10  85   0   4   0   5  28   2]
+ [  0   1   0   0 117   2   0  19   4   0]
+ [  0   0   0   3   0 125   0   4   5   1]
+ [  0   2   0   0   0   2 134   0   1   0]
+ [  0   0   0   0   0   0   0 125   1   2]
+ [  0   4   3   0   0   2   0   3 117   3]
+ [  0   5   4   2   0   1   1   9  16  93]]
 """
 
 
@@ -95,14 +128,10 @@ def plot_projection():
 def classification():
     # Create data for the  model
     # split the data into random train and test subsets
-    """
-    You can specify the test_size and train_size
     X_train, X_test, y_train, y_test = train_test_split(digits.data, 
                                                         digits.target, 
                                                         test_size = 0.75,
                                                         train_size = 0.25)
-    """
-    X_train, X_test, y_train, y_test = train_test_split(digits.data, digits.target)
 
     # Create the model
     # Gaussian Naive Bayes Classifier class
