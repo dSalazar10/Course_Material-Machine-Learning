@@ -1,4 +1,4 @@
-From "Person of Interest's AI system boot loader (for fun/inspiration):
+From "Person of Interest"'s AI system boot loader (for fun/inspiration):
 - CORE ANALYTICS 
 - NEURAL NETWORKS
 - HEURISTIC ENGINES
