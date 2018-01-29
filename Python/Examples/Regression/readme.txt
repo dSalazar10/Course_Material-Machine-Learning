@@ -1,5 +1,9 @@
 Useful for predicting values.
 
+Regression analysis – the statistical process to estimate relationships among variables.
+
+Regression - predicting the output value using training data.
+
 Todo:
 - Ordinal regression
 - Poisson regression
