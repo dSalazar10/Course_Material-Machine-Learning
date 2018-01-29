@@ -29,7 +29,6 @@ nueral network:
 
 Todo:
 - averaged perceptron
-- logistic regression
 - decision forest
 - boosted decision tree
 - decision jungle
