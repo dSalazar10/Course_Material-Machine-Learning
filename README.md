@@ -23,7 +23,7 @@ Common deep learning applications include:
 - Bioinformatics
 - Speech recognition
 
-
+http://citeseer.ist.psu.edu/index
 
 Required Reading:
 - Introduction to Machine Learning, Third Edition By: E. Alpaydin
