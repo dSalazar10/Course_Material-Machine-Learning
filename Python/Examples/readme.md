@@ -1,1 +1,3 @@
 https://en.wikipedia.org/wiki/Outline_of_machine_learning#Machine_learning_algorithms
+
+Scientists design experiments and make observations and collect data. They then try to extract knowledge by finding out simple models that explain the data they observed. We are now at a point that such analysis of data can no longer be done by people, both because the amount of data is huge and because people who can do such analysis are rare and manual analysis is costly. There is thus a growing interest in computer models that can analyze data and extract information automatically from them, that is, learn. 
