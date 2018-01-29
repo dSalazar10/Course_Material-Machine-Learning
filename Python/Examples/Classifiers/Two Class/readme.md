@@ -34,3 +34,4 @@ Todo:
 - decision jungle
 - locally deep SVM
 - nueral network
+- Comment logistic_regression.py
