@@ -13,6 +13,7 @@ Proc. ACM SIGIR Conference, pp. 42–49, (1999)., it is stated that SVM was
 introduced for solving two-class pattern recognition problems.
 
 https://www.pyimagesearch.com/2016/08/22/an-intro-to-linear-classification-with-python/
+https://www.kaggle.com/c/dogs-vs-cats/data
 
 parameterization is the process of defining the necessary parameters of a 
 given model, defining our problem in terms of:
