@@ -34,4 +34,15 @@ Todo:
 - decision jungle
 - locally deep SVM
 - nueral network
-- Comment logistic_regression.py
+
+Performance review of modeling the digits dataset
+
+Naive Bayes Classfication
+- Number of correct matches: 1112
+- Total number of data points: 1348
+- Ratio of correct predictions: 0.824925816024
+
+Logistic Regression Classfication:
+- Number of correct matches: 1288
+- Total number of data points: 1348
+- Ratio of correct predictions: 0.955489614243
