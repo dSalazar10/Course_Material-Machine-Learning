@@ -33,6 +33,8 @@ Todo:
 - decision jungle
 - locally deep SVM
 - nueral network
+- comment Perceptron
+- comment Decision Tree
 
 Performance review of linear modeling of the digits dataset
 
@@ -55,3 +57,8 @@ Perceptron Classification:
 - Number of correct matches: 1253
 - Total number of data points: 1348
 - Ratio of correct predictions: 0.929525222552
+
+Decision Tree Classification:
+- Number of correct matches: 896
+- Total number of data points: 1348
+- Ratio of correct predictions: 0.6646884273
