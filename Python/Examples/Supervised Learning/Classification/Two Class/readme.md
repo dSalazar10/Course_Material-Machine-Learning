@@ -35,7 +35,7 @@ Todo:
 - locally deep SVM
 - nueral network
 
-Performance review of modeling the digits dataset
+Performance review of linear modeling of the digits dataset
 
 Naive Bayes Classfication
 - Number of correct matches: 1112
