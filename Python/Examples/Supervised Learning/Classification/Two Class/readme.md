@@ -28,7 +28,6 @@ nueral network:
 - accuracy, long training times
 
 Todo:
-- averaged perceptron
 - decision forest
 - boosted decision tree
 - decision jungle
@@ -51,3 +50,8 @@ Linear SVM Classification:
 - Number of correct matches: 1259
 - Total number of data points: 1348
 - Ratio of correct predictions: 0.933976261128
+
+Perceptron Classification:
+- Number of correct matches: 1253
+- Total number of data points: 1348
+- Ratio of correct predictions: 0.929525222552
