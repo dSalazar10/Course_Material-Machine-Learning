@@ -123,8 +123,7 @@ def classification():
     # Create data for the  model
     # split the data into random train and test subsets
     X_train, X_test, y_train, y_test = train_test_split(digits.data, 
-                                                        digits.target, 
-                                                        test_size = 0.75,
+                                                        digits.target,
                                                         train_size = 0.25)
     
     # Create the model
