@@ -1,6 +1,16 @@
 """
 perceptron.py
 
+The Perceptron is another simple algorithm suitable for large scale learning. 
+By default:
+- It does not require a learning rate.
+- It is not regularized (penalized).
+- It updates its model only on mistakes.
+
+The last characteristic implies that the Perceptron is slightly faster to 
+train than SGD with the hinge loss and that the resulting models are sparser.
+
+
 Results:
 
 Number of correct matches: 1253
@@ -72,7 +82,7 @@ def perceptron():
                                                     train_size = 0.25, 
                                                     random_state=0)
     # Create the model
-    # Linear Support Vector Classifier.
+    # Perceptron Classifier.
     perceptron = Perceptron(max_iter=1000)
     
     # Train the model
