@@ -59,39 +59,40 @@ There are two primary advantages to utilizing parameterized learning:
     
 Results:
 
-Number of correct matches: 418
+Number of correct matches: 1259
 
-Total number of data points: 450
+Total number of data points: 1348
 
-Ratio of correct predictions: 0.928888888889
+Ratio of correct predictions: 0.933976261128
 
 Classification report
              precision    recall  f1-score   support
 
-          0       1.00      1.00      1.00        37
-          1       0.83      0.93      0.88        43
-          2       0.93      0.91      0.92        44
-          3       0.83      0.96      0.89        45
-          4       0.93      0.97      0.95        38
-          5       0.98      0.98      0.98        48
-          6       0.93      0.98      0.95        52
-          7       0.98      0.94      0.96        48
-          8       1.00      0.71      0.83        48
-          9       0.94      0.94      0.94        47
+          0       0.99      0.99      0.99       139
+          1       0.84      0.97      0.90       137
+          2       0.98      0.95      0.96       129
+          3       0.91      0.93      0.92       141
+          4       0.96      0.95      0.96       127
+          5       0.95      0.95      0.95       147
+          6       0.95      0.99      0.97       135
+          7       0.96      0.98      0.97       126
+          8       0.90      0.73      0.81       134
+          9       0.91      0.91      0.91       133
 
-avg / total       0.93      0.93      0.93       450
+avg / total       0.93      0.93      0.93      1348
 
         Confusion matrix
-[[37  0  0  0  0  0  0  0  0  0]
- [ 0 40  0  0  0  0  3  0  0  0]
- [ 0  1 40  3  0  0  0  0  0  0]
- [ 0  0  1 43  0  0  0  0  0  1]
- [ 0  0  0  1 37  0  0  0  0  0]
- [ 0  1  0  0  0 47  0  0  0  0]
- [ 0  1  0  0  0  0 51  0  0  0]
- [ 0  1  0  1  1  0  0 45  0  0]
- [ 0  4  2  3  1  0  1  1 34  2]
- [ 0  0  0  1  1  1  0  0  0 44]]
+[[137   0   0   0   0   2   0   0   0   0]
+ [  0 133   1   0   0   1   1   0   0   1]
+ [  0   1 122   2   0   0   0   0   4   0]
+ [  0   1   0 131   0   3   0   1   2   3]
+ [  0   4   0   0 121   0   0   0   0   2]
+ [  0   2   0   1   1 139   1   2   0   1]
+ [  1   0   0   0   1   0 133   0   0   0]
+ [  0   0   0   0   2   0   0 124   0   0]
+ [  0  14   2   7   1   1   5   1  98   5]
+ [  0   3   0   3   0   0   0   1   5 121]]
+
 """
 import matplotlib.pyplot as plt
 from sklearn.svm import LinearSVC
@@ -123,7 +124,8 @@ def svm():
     # split the data into random train and test subsets
     X_train, X_test, y_train, y_test = train_test_split(digits.data,
                                                     digits.target,
-                                                    test_size = 0.25, 
+                                                    test_size = 0.75,
+                                                    train_size = 0.25, 
                                                     random_state=0)
     # Create the model
     # Linear Support Vector Classifier.
