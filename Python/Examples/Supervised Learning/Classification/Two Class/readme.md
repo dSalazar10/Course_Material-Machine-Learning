@@ -47,7 +47,7 @@ Logistic Regression Classfication:
 - Total number of data points: 1348
 - Ratio of correct predictions: 0.955489614243
 
-SVM Classification:
+Linear SVM Classification:
 - Number of correct matches: 1259
 - Total number of data points: 1348
 - Ratio of correct predictions: 0.933976261128
