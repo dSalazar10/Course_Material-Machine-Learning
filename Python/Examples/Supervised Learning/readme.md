@@ -7,7 +7,9 @@ Examples:
 Finding associations between products purchased by customers. If people who by X typically buy Y, and if there is a customer who buy X but doesn't buy Y, they are a Y customer. We can target them for cross selling, otherwise known as an association rule. Find the conditional probability P(X|Y) where Y is the product we would like to condition on X, which is the product or set of products which we know the customer has already purchased. For example: if P(beer|chips) = 0.7, then we could say 70% of people who buy beer also buy chips. We might want to also condition the customer's attributes along with Y, P(X|Y,D) where D is the set of customer attributes. 
 
 Store: Products -> Cross selling
+
 Bookseller: Books -> Cross selling
+
 Web Portal: link clicks -> Cache pages in advanced
 
 2. Classification (Credit Scoring):
