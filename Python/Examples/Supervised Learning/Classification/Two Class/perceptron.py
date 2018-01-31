@@ -281,7 +281,7 @@ def perceptron():
     # actual data
     act = y_test
     
-    """
+    
     # Display the results
     # size of image: a width x height tuple in inches
     fig = plt.figure(figsize=(6, 6))
@@ -299,7 +299,7 @@ def perceptron():
             ax.text(0, 7, str(est[i]), color='green')
         else: # error
             ax.text(0, 7, str(est[i]), color='red')
-    """
+    
     # Quantify the performance
     # Correct matches
     matches = (est == act)
@@ -309,9 +309,9 @@ def perceptron():
     # Ratio of correct predictions
     print "Ratio of correct predictions:", matches.sum() / float(len(matches))
     # Classification report
-    #print "\nClassification report\n", metrics.classification_report(act, est)
+    print "\nClassification report\n", metrics.classification_report(act, est)
     # Confusion matrix
-    #print "\tConfusion matrix\n", metrics.confusion_matrix(act, est)
+    print "\tConfusion matrix\n", metrics.confusion_matrix(act, est)
     
-#plot_data()
+plot_data()
 perceptron()
