@@ -2,7 +2,7 @@ Given only inputs (no categories), automatically discover representations, corre
 
 The aim is to find the regularities in the input; density estimation. There is a structure to the input space such that certain patterns occur more often than others, and we want to see what generally happens and what does not. 
 
-Group and interpret data based only on input data.
+Group and interpret data based only on input data; data driven.
 
 1. Clustering
 
