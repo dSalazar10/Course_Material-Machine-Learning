@@ -63,13 +63,13 @@ Different models may have different feature engineering requirements. Some have 
 
 
 
-<p>Part 2: Choosing and tuning models</p>
+<h1>Part 2: Choosing and tuning models</h1>
 We have our data, an idea of the models we want to build, we completed part 1 and are ready to do some modeling. We have to train (use 75% of data to build model) and test (use 25% to evaluate model) our models. A good model should be able to make predictions on data it wasn't trained with.
-What is a model?
+<h2>What is a model?</h2>
 -	At a high level, a model is a simplification of something more complex.
 -	"All models are wrong, but some are useful." - statistics mantra
 -	A machine learning algorithm uses data to automatically learn the rules. It simplifies the complexities of the data into relationships described by the rules. A predictive model is an algorithm that learns the prediction rules.
-What is a good predictive model?
+<h2>What is a good predictive model?</h2>
 -	Specifics of the model itself
 <ol>
   <li>Accurate: Are we making good predictions? </li>
@@ -80,7 +80,7 @@ What is a good predictive model?
   <li>Fast: How long does it take to build a model, and how long does the model take to make predictions?  </li>
   <li>Scalable: How much longer do we have to wait if we build/predict using a lot more data? </li>
 </ol>
-What is model complexity?
+<h2>What is model complexity?</h2>
 -	A model is more complex if:
 <ol>
   <li>It relies on more features to learn and predict (ex. 2 vs 10 features to predict a target) </li>
@@ -89,7 +89,7 @@ What is model complexity?
 </ol>
 -	Opposite of explain ability
 -	Computational overhead
-What is model complexity across the same model?
+<h2>What is model complexity across the same model?</h2>
 -	The same ML algorithm could be made more complex based on the number of parameters or the choice of some hyper-parameters
 <ol>
   <li>A regression model can have more features, or polynomial terms and interaction terms </li>
@@ -97,7 +97,7 @@ What is model complexity across the same model?
 </ol>
 -	Making the same algorithm increases the chance of overfitting
 -	"Models have to be simple, but not simplistic" - Einstein
-What is model complexity across different models?
+<h2>What is model complexity across different models?</h2>
 -	Complexity can also refer to choosing a more complex algorithm, which is generally less efficient (to train and to predict), in addition to being less easy to understand.
 <ol>
   <li>A neural network is similar to regression but much more complex in its feature engineering </li>
