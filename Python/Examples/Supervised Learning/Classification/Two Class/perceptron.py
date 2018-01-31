@@ -18,39 +18,37 @@ o(x1, x2, ..., xN) = ((w0 + w1x1 + w2x2 + ... + wNxN) > 0) ? (1) : (-1)
 
 Results:
 
-Number of correct matches: 1257
-
+Number of correct matches: 1273
 Total number of data points: 1348
-
-Ratio of correct predictions: 0.932492581602
+Ratio of correct predictions: 0.944362017804
 
 Classification report
              precision    recall  f1-score   support
 
-          0       0.99      0.97      0.98       139
-          1       0.90      0.88      0.89       137
-          2       0.99      0.99      0.99       129
-          3       0.99      0.84      0.91       141
-          4       0.96      0.95      0.96       127
-          5       0.87      0.96      0.91       147
-          6       0.96      0.96      0.96       135
-          7       0.98      0.97      0.97       126
-          8       0.79      0.91      0.84       134
-          9       0.94      0.89      0.92       133
+          0       1.00      0.97      0.99       139
+          1       0.94      0.95      0.94       137
+          2       0.98      0.98      0.98       129
+          3       0.96      0.94      0.95       141
+          4       0.97      0.95      0.96       127
+          5       0.88      0.96      0.92       147
+          6       0.95      0.97      0.96       135
+          7       0.92      1.00      0.96       126
+          8       0.93      0.84      0.88       134
+          9       0.93      0.89      0.91       133
 
-avg / total       0.94      0.93      0.93      1348
+avg / total       0.95      0.94      0.94      1348
 
         Confusion matrix
 [[135   0   0   0   1   3   0   0   0   0]
- [  0 121   0   0   0   3   1   0  11   1]
- [  0   0 128   0   0   0   0   0   1   0]
- [  0   4   1 119   0   4   0   2   7   4]
- [  0   1   0   0 121   0   0   0   5   0]
- [  1   2   0   0   1 141   1   0   0   1]
- [  0   3   0   0   0   2 129   0   1   0]
- [  0   0   0   0   2   1   0 122   1   0]
- [  0   3   0   0   1   4   3   0 122   1]
- [  0   1   0   1   0   4   0   1   7 119]]
+ [  0 130   1   0   0   3   1   1   0   1]
+ [  0   0 126   0   0   0   0   2   1   0]
+ [  0   0   0 132   0   3   0   1   3   2]
+ [  0   2   0   0 121   0   0   2   0   2]
+ [  0   1   0   0   1 141   1   1   0   2]
+ [  0   0   0   0   0   2 131   0   2   0]
+ [  0   0   0   0   0   0   0 126   0   0]
+ [  0   4   1   4   1   4   5   1 112   2]
+ [  0   2   0   2   1   4   0   3   2 119]]
 
 """
 import matplotlib.pyplot as plt
@@ -150,58 +148,6 @@ def perceptron():
                             eta0=1.0, n_jobs=1, random_state=0,
                             class_weight=None, warm_start=False)
     
-    
-    Max_iter=5
-    Number of correct matches: 1257
-    Total number of data points: 1348
-    Ratio of correct predictions: 0.932492581602
-
-    Max_iter=50
-    Number of correct matches: 1260
-    Total number of data points: 1348
-    Ratio of correct predictions: 0.93471810089
-    
-    Max_iter=63
-    Number of correct matches: 1267
-    Total number of data points: 1348
-    Ratio of correct predictions: 0.939910979228
-    
-    Max_iter=25
-    Number of correct matches: 1263
-    Total number of data points: 1348
-    Ratio of correct predictions: 0.936943620178
-    
-    Max_iter=12
-    Number of correct matches: 1225
-    Total number of data points: 1348
-    Ratio of correct predictions: 0.908753709199
-    
-    Max_iter=18
-    Number of correct matches: 1242
-    Total number of data points: 1348
-    Ratio of correct predictions: 0.921364985163
-    
-    Max_iter=22
-    Number of correct matches: 1262
-    Total number of data points: 1348
-    Ratio of correct predictions: 0.936201780415
-    
-    Max_oter=23
-    Number of correct matches: 1266
-    Total number of data points: 1348
-    Ratio of correct predictions: 0.939169139466
-
-    Max_iter=24
-    Number of correct matches: 1244
-    Total number of data points: 1348
-    Ratio of correct predictions: 0.922848664688
-
-    Max_iter: 63 (93.9%), 23 (93.9%), 25 (93.6%)
-    perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
-                            max_iter=63, tol=None, shuffle=True, verbose=0,
-                            eta0=1.0, n_jobs=1, random_state=0,
-                            class_weight=None, warm_start=False)
-    
     Shuffle: True
     Number of correct matches: 1267
     Total number of data points: 1348
@@ -268,7 +214,7 @@ def perceptron():
                             class_weight=None, warm_start=False)
     """
     perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
-                            max_iter=63, tol=None, shuffle=True, verbose=0,
+                            max_iter=56, tol=None, shuffle=True, verbose=0,
                             eta0=1.0, n_jobs=1, random_state=0,
                             class_weight=None, warm_start=False)
     
