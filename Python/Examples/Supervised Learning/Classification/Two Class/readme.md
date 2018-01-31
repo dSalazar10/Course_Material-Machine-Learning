@@ -54,7 +54,7 @@ Linear SVM Classification:
 - Ratio of correct predictions: 0.933976261128
 
 Default Perceptron Classification:
-perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+- perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
                             max_iter=5, tol=None, shuffle=True, verbose=0,
                             eta0=1.0, n_jobs=1, random_state=0,
                             class_weight=None, warm_start=False)
@@ -63,7 +63,7 @@ perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
 - Ratio of correct predictions: 0.932492581602
 
 Tuned Perceptron Classification:
-perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+- perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
                             max_iter=63, tol=None, shuffle=True, verbose=0,
                             eta0=1.0, n_jobs=1, random_state=0,
                             class_weight=None, warm_start=False)
