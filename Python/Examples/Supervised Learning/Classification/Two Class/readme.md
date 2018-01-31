@@ -53,10 +53,23 @@ Linear SVM Classification:
 - Total number of data points: 1348
 - Ratio of correct predictions: 0.933976261128
 
-Perceptron Classification:
+Default Perceptron Classification:
+perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+                            max_iter=5, tol=None, shuffle=True, verbose=0,
+                            eta0=1.0, n_jobs=1, random_state=0,
+                            class_weight=None, warm_start=False)
 - Number of correct matches: 1257
 - Total number of data points: 1348
 - Ratio of correct predictions: 0.932492581602
+
+Tuned Perceptron Classification:
+perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+                            max_iter=63, tol=None, shuffle=True, verbose=0,
+                            eta0=1.0, n_jobs=1, random_state=0,
+                            class_weight=None, warm_start=False)
+- Number of correct matches: 1267
+- Total number of data points: 1348
+- Ratio of correct predictions: 0.939910979228
 
 Decision Tree Classification:
 - Number of correct matches: 896
