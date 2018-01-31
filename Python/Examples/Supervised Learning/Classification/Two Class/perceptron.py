@@ -10,42 +10,47 @@ By default:
 The last characteristic implies that the Perceptron is slightly faster to 
 train than SGD with the hinge loss and that the resulting models are sparser.
 
+https://en.wikipedia.org/wiki/Perceptron
+
+o(x1, x2, ..., xN) = ((w0 + w1x1 + w2x2 + ... + wNxN) > 0) ? (1) : (-1)  
+
+
 
 Results:
 
-Number of correct matches: 1253
+Number of correct matches: 1257
 
 Total number of data points: 1348
 
-Ratio of correct predictions: 0.929525222552
+Ratio of correct predictions: 0.932492581602
 
 Classification report
              precision    recall  f1-score   support
 
-          0       1.00      0.97      0.99       139
-          1       0.92      0.94      0.93       137
-          2       0.98      0.92      0.95       129
-          3       0.94      0.94      0.94       141
-          4       0.98      0.94      0.96       127
-          5       0.90      0.96      0.93       147
-          6       0.94      0.96      0.95       135
-          7       0.92      1.00      0.96       126
-          8       0.80      0.80      0.80       134
-          9       0.93      0.86      0.90       133
+          0       0.99      0.97      0.98       139
+          1       0.90      0.88      0.89       137
+          2       0.99      0.99      0.99       129
+          3       0.99      0.84      0.91       141
+          4       0.96      0.95      0.96       127
+          5       0.87      0.96      0.91       147
+          6       0.96      0.96      0.96       135
+          7       0.98      0.97      0.97       126
+          8       0.79      0.91      0.84       134
+          9       0.94      0.89      0.92       133
 
-avg / total       0.93      0.93      0.93      1348
+avg / total       0.94      0.93      0.93      1348
 
         Confusion matrix
-[[135   0   0   0   0   3   0   0   1   0]
- [  0 129   1   0   0   1   1   1   3   1]
- [  0   1 119   0   0   0   0   2   7   0]
- [  0   0   0 132   0   3   0   1   3   2]
- [  0   3   0   0 119   0   0   2   2   1]
- [  0   1   0   0   1 141   1   1   0   2]
- [  0   0   0   0   0   2 130   0   3   0]
- [  0   0   0   0   0   0   0 126   0   0]
- [  0   5   1   6   1   4   7   1 107   2]
- [  0   1   0   2   1   3   0   3   8 115]]
+[[135   0   0   0   1   3   0   0   0   0]
+ [  0 121   0   0   0   3   1   0  11   1]
+ [  0   0 128   0   0   0   0   0   1   0]
+ [  0   4   1 119   0   4   0   2   7   4]
+ [  0   1   0   0 121   0   0   0   5   0]
+ [  1   2   0   0   1 141   1   0   0   1]
+ [  0   3   0   0   0   2 129   0   1   0]
+ [  0   0   0   0   2   1   0 122   1   0]
+ [  0   3   0   0   1   4   3   0 122   1]
+ [  0   1   0   1   0   4   0   1   7 119]]
 
 """
 import matplotlib.pyplot as plt
@@ -83,10 +88,55 @@ def perceptron():
                                                     random_state=0)
     # Create the model
     # Perceptron Classifier.
-    perceptron = Perceptron(max_iter=1000)
+    """
+    penalty : None, 'l2' or 'l1' or 'elasticnet'
+    - Regularization term; Default is None
+    
+    alpha : float
+    - Regularization Coefficient; Defaults to 0.0001 if regularization is used
+    
+    fit_intercept : bool
+    - Estimation; Defaults to True
+    
+    max_iter : int, optional
+    - Max Epochs; Defaults to 5
+    
+    tol : float or None, optional
+    - Stopping criterion; Defaults to None
+    
+    shuffle : bool, optional, default True
+    - Should shuffle after epoch
+    
+    verbose : integer, optional
+    - Verbosity level
+    
+    eta0 : double
+    - Update Coefficient; Defaults to 1
+    
+    n_jobs : integer, optional
+    - Number of CPUs for OVA; Defaults to 1
+    
+    random_state : int, RandomState instance or None, optional, default None
+    - seed of the Shuffle pseudo random number generator
+    
+    class_weight : dict, {class_label: weight} or "balanced" or None, optional
+    - Weights associated with classes; Defaults to 1
+    
+    warm_start : bool, optional
+    - If True, reuse previous call's solution as init, else, erase solution
+    
+    Perceptron() is equivalent to 
+    SGDClassifier(loss="perceptron", eta0=1, learning_rate="constant",
+                  penalty=None)
+    
+    """
+    perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+                            max_iter=5, tol=None, shuffle=True, verbose=0,
+                            eta0=1.0, n_jobs=1, random_state=0,
+                            class_weight=None, warm_start=False, n_iter=None)
     
     # Train the model
-    # Fit perceptron according to X, y
+    # Fit linear model with Stochastic Gradient Descent
     perceptron.fit(X_train, y_train)
     
     # estimated data
