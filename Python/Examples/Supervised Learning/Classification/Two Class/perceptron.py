@@ -129,11 +129,148 @@ def perceptron():
     SGDClassifier(loss="perceptron", eta0=1, learning_rate="constant",
                   penalty=None)
     
-    """
+    Penalty=None
+    Number of correct matches: 1257
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.932492581602
+    
+    Penalty='l2'
+    Number of correct matches: 1221
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.905786350148
+    
+    Penalty='l1'
+    Number of correct matches: 1256
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.93175074184
+    
+    Penalty: None (93.2%), 'l1' (93.1%), and 'l2' (90.5%)
     perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
                             max_iter=5, tol=None, shuffle=True, verbose=0,
                             eta0=1.0, n_jobs=1, random_state=0,
-                            class_weight=None, warm_start=False, n_iter=None)
+                            class_weight=None, warm_start=False)
+    
+    
+    Max_iter=5
+    Number of correct matches: 1257
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.932492581602
+
+    Max_iter=50
+    Number of correct matches: 1260
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.93471810089
+    
+    Max_iter=63
+    Number of correct matches: 1267
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.939910979228
+    
+    Max_iter=25
+    Number of correct matches: 1263
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.936943620178
+    
+    Max_iter=12
+    Number of correct matches: 1225
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.908753709199
+    
+    Max_iter=18
+    Number of correct matches: 1242
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.921364985163
+    
+    Max_iter=22
+    Number of correct matches: 1262
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.936201780415
+    
+    Max_oter=23
+    Number of correct matches: 1266
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.939169139466
+
+    Max_iter=24
+    Number of correct matches: 1244
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.922848664688
+
+    Max_iter: 63 (93.9%), 23 (93.9%), 25 (93.6%)
+    perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+                            max_iter=63, tol=None, shuffle=True, verbose=0,
+                            eta0=1.0, n_jobs=1, random_state=0,
+                            class_weight=None, warm_start=False)
+    
+    Shuffle: True
+    Number of correct matches: 1267
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.939910979228
+
+    Shuffle: False
+    Number of correct matches: 1225
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.908753709199
+    
+    Shuffle=True
+    perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+                            max_iter=63, tol=None, shuffle=False, verbose=0,
+                            eta0=1.0, n_jobs=1, random_state=0,
+                            class_weight=None, warm_start=False)
+    
+    Fit_intercept: True
+    Number of correct matches: 1267
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.939910979228
+    
+    Fit_intercept: False
+    Number of correct matches: 1240
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.919881305638
+    
+    fit_intercept=True
+    perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+                            max_iter=63, tol=None, shuffle=True, verbose=0,
+                            eta0=1.0, n_jobs=1, random_state=0,
+                            class_weight=None, warm_start=False)
+
+    tol: 1.0
+    Number of correct matches: 1233
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.9146884273
+
+    tol: None
+    Number of correct matches: 1267
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.939910979228
+
+    tol=None
+    perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+                            max_iter=63, tol=None, shuffle=True, verbose=0,
+                            eta0=1.0, n_jobs=1, random_state=0,
+                            class_weight=None, warm_start=False)
+    
+    
+    class_weight: "balanced"
+    Number of correct matches: 1262
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.936201780415
+
+    class_weight: None
+    Number of correct matches: 1267
+    Total number of data points: 1348
+    Ratio of correct predictions: 0.939910979228
+    
+    class_weight=None
+    perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+                            max_iter=63, tol=None, shuffle=True, verbose=0,
+                            eta0=1.0, n_jobs=1, random_state=0,
+                            class_weight=None, warm_start=False)
+    """
+    perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
+                            max_iter=63, tol=None, shuffle=True, verbose=0,
+                            eta0=1.0, n_jobs=1, random_state=0,
+                            class_weight=None, warm_start=False)
     
     # Train the model
     # Fit linear model with Stochastic Gradient Descent
@@ -144,6 +281,7 @@ def perceptron():
     # actual data
     act = y_test
     
+    """
     # Display the results
     # size of image: a width x height tuple in inches
     fig = plt.figure(figsize=(6, 6))
@@ -161,19 +299,19 @@ def perceptron():
             ax.text(0, 7, str(est[i]), color='green')
         else: # error
             ax.text(0, 7, str(est[i]), color='red')
-
+    """
     # Quantify the performance
     # Correct matches
     matches = (est == act)
     print "\nNumber of correct matches:", matches.sum()
     # Count of data points
-    print "\nTotal number of data points:", len(matches)
+    print "Total number of data points:", len(matches)
     # Ratio of correct predictions
-    print "\nRatio of correct predictions:", matches.sum() / float(len(matches))
+    print "Ratio of correct predictions:", matches.sum() / float(len(matches))
     # Classification report
-    print "\nClassification report\n", metrics.classification_report(act, est)
+    #print "\nClassification report\n", metrics.classification_report(act, est)
     # Confusion matrix
-    print "\tConfusion matrix\n", metrics.confusion_matrix(act, est)
+    #print "\tConfusion matrix\n", metrics.confusion_matrix(act, est)
     
-plot_data()
+#plot_data()
 perceptron()
