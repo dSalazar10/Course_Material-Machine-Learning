@@ -1,12 +1,3 @@
-
-Underfitting: too little model capacity
-
-Overfitting: too much model capacity
-
-How much do we care about explain ability?
-
-How much do we care about making predictions?
-
 <h1>Part 1: Getting ready</h1>
 <h2>Know your data</h2>
 Summary statistics
