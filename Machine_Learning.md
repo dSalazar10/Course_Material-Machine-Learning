@@ -11,7 +11,7 @@ Underfitting: too little model capacity
 Overfitting: too much model capacity
 
 
-Part 1: Getting ready
+<p>Part 1: Getting ready</p>
 
 Know your data
 -	Summary statistics
@@ -65,7 +65,7 @@ Augment the data
 
 
 
-Part 2: Choosing and tuning models
+<p>Part 2: Choosing and tuning models</p>
 
 We have our data, an idea of the models we want to build, we completed part 1 and are ready to do some modeling. We have to train (use 75% of data to build model) and test (use 25% to evaluate model) our models. A good model should be able to make predictions on data it wasn't trained with.
 
@@ -115,7 +115,7 @@ How much do we care about explain ability?
 How much do we care about making predictions?
 
 
-Part 3: Deploying Models
+<p>Part 3: Deploying Models</p>
 
 We have a model and we are ready to use it.
 Model consumption
@@ -128,7 +128,7 @@ Model consumption
 </ol>
 
 
-Part 4: The data science lifecycle
+<p>Part 4: The data science lifecycle</p>
 The choice of a model affects and is affected by:
 -	Whether the model meets the business goals
 -	How much pre-processing the models needs
