@@ -16,27 +16,27 @@ How much do we care about making predictions?
 
 <h1>Part 1: Getting ready</h1>
 <h2>Know your data</h2>
--	Summary statistics
+Summary statistics
 <ol>
   <li>Percentiles can help identify the range for most of the data. </li>
   <li>Averages and medians can describe central tendency. </li>
   <li>Correlations can indicate strong relations </li>
 </ol>
--	Visualize the data
+Visualize the data
 <ol>
   <li>Box-plots can help identify outliers </li>
   <li>Density plots and histograms show the spread of the data </li>
   <li>Scatter plots can describe bivariate relationships </li>
 </ol>
 <h2>Clean your data</h2>
--	Deal with missing values
+Deal with missing values
 <ol>
   <li>Missing data effects some models more than others </li>
   <li>Even for models that can handle missing data, they can be sensitive to it (missing data for certain variables can lead to poor predictions).</li>
   <li>Missing data can be more common in production </li>
   <li>Missing value imputation can get very sophisticated </li>
 </ol>
--	Choose what to do with outliers
+Choose what to do with outliers
 <ol>
   <li>An outlier is somewhat subjective. </li>
   <li>Outliers can be very common in multidimensional data </li>
@@ -44,7 +44,7 @@ How much do we care about making predictions?
   <li>Outliers can be the result of bad data collection, or they can be legitimate extreme (or unusual) values. </li>
   <li>Sometimes outliers are the interesting data points we want to model, and other times they just get in the way. </li>
 </ol>
--	Does the data need to be aggregated?
+Does the data need to be aggregated?
 <ol>
   <li>Row data is somewhat too granular for modeling. </li>
   <li>The granularity of the data affects the interpretation of our model </li>
@@ -52,14 +52,14 @@ How much do we care about making predictions?
   <li>Aggregating data can also lessen the number of missing values and the effect of outliers </li>
 </ol>
 <h2>Augment the data</h2>
--	Feature engineering is the process of going from raw data (ex. Date-time) to data that is ready for modeling (ex. Day of the week or month). It can serve multiple purposes:
+Feature engineering is the process of going from raw data (ex. Date-time) to data that is ready for modeling (ex. Day of the week or month). It can serve multiple purposes:
 <ol>
   <li>Make the model easier to interpret (ex. binning) </li>
   <li>Capture more complex relationships (ex. NNs) </li>
   <li>Reduce data redundancy and dimensionality (ex. PCA) </li>
   <li>Rescale variables (ex. Standardizing or normalizing) </li>
 </ol>
--	Different models may have different feature engineering requirements. Some have built-in feature engineering.
+Different models may have different feature engineering requirements. Some have built-in feature engineering.
 
 
 
