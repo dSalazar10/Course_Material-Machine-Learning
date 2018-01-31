@@ -2,6 +2,8 @@ Given only inputs (no categories), automatically discover representa?ons, correl
 
 The aim is to find the regularities in the input; density estimation. There is a structure to the input space such that certain patterns occur more often than others, and we want to see what generally happens and what does not. 
 
+Group and interpret data based only on input data.
+
 1. Clustering
 
 Given customer data containing demographic data and past transactions, determine distribution of the profile of its customers, to see what type of customers frequently occur. You could use customer segmentation to group customers with similar data. You could use customer relationship management which services and products to advertise to each customer segment. You may be able to determine a niche in the market by observing the outliers, which can be further targeted in a unique way. 
