@@ -108,8 +108,8 @@ Complexity can also refer to choosing a more complex algorithm, which is general
 
 <h1>Part 3: Deploying Models</h1>
 We have a model and we are ready to use it.
-Model consumption
--	Its important to know as much as possible how models are to be consumed
+<h2>Model consumption</h2>
+Its important to know as much as possible how models are to be consumed
 <ol>
   <li>A model that is consumed by a web app needs to be fast </li>
   <li>A model that is used to predict in batch needs to be scalable </li>
@@ -119,11 +119,13 @@ Model consumption
 
 
 
-<p>Part 4: The data science lifecycle</p>
-The choice of a model affects and is affected by:
--	Whether the model meets the business goals
--	How much pre-processing the models needs
--	How accurate the model is
--	How explainable the model is
--	How fast the model is in making predictions
--	How scalable the models is (building and predicting)
+<h1>Part 4: The data science lifecycle</h1>
+<h2>The choice of a model affects and is affected by:</h2>
+<ol>
+  <li>Whether the model meets the business goals</li>
+  <li>How much pre-processing the models needs</li>
+  <li>How accurate the model is</li>
+  <li>How explainable the model is</li>
+  <li>How fast the model is in making predictions</li>
+  <li>How scalable the models is (building and predicting)</li>
+</ol>
