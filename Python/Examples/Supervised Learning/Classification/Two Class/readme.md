@@ -54,9 +54,9 @@ Linear SVM Classification:
 - Ratio of correct predictions: 0.933976261128
 
 Perceptron Classification:
-- Number of correct matches: 1253
+- Number of correct matches: 1257
 - Total number of data points: 1348
-- Ratio of correct predictions: 0.929525222552
+- Ratio of correct predictions: 0.932492581602
 
 Decision Tree Classification:
 - Number of correct matches: 896
