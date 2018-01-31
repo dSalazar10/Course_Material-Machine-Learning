@@ -21,47 +21,46 @@ Know your data
   <li>Correlations can indicate strong relations </li>
 </ol>
 -	Visualize the data
-<ul>
-<li> </li>
-</ul>
-o	Box-plots can help identify outliers
-o	Density plots and histograms show the spread of the data
-o	Scatter plots can describe bivariate relationships
+<ol>
+  <li>Box-plots can help identify outliers </li>
+  <li>Density plots and histograms show the spread of the data </li>
+  <li>Scatter plots can describe bivariate relationships </li>
+</ol>
+
+
 Clean your data
 -	Deal with missing values
-<ul>
-<li> </li>
-</ul>
-o	Missing data effects some models more than others
-o	Even for models that can handle missing data, they can be sensitive to it (missing data for certain variables can lead to poor predictions).
-o	Missing data can be more common in production
-o	Missing value imputation can get very sophisticated
+<ol>
+  <li>Missing data effects some models more than others </li>
+  <li>Even for models that can handle missing data, they can be sensitive to it (missing data for certain variables can lead to poor predictions).</li>
+  <li>Missing data can be more common in production </li>
+  <li>Missing value imputation can get very sophisticated </li>
+</ol>
 -	Choose what to do with outliers
-<ul>
-<li> </li>
-</ul>
-o	An outlier is somewhat subjective.
-o	Outliers can be very common in multidimensional data
-o	Some models are less sensitive (ex. tree models are more robust) to outliers than others (ex. Regression models are less robust)
-o	Outliers can be the result of bad data collection, or they can be legitimate extreme (or unusual) values.
-o	Sometimes outliers are the interesting data points we want to model, and other times they just get in the way.
+<ol>
+  <li>An outlier is somewhat subjective. </li>
+  <li>Outliers can be very common in multidimensional data </li>
+  <li>Some models are less sensitive (ex. tree models are more robust) to outliers than others (ex. Regression models are less robust) </li>
+  <li>Outliers can be the result of bad data collection, or they can be legitimate extreme (or unusual) values. </li>
+  <li>Sometimes outliers are the interesting data points we want to model, and other times they just get in the way. </li>
+</ol>
 -	Does the data need to be aggregated?
-<ul>
-<li> </li>
-</ul>
-o	Row data is somewhat too granular for modeling.
-o	The granularity of the data affects the interpretation of our model
-o	Aggregating data can also remove bias posed by more frequent observations in the raw data
-o	Aggregating data can also lessen the number of missing values and the effect of outliers
+<ol>
+  <li>Row data is somewhat too granular for modeling. </li>
+  <li>The granularity of the data affects the interpretation of our model </li>
+  <li>Aggregating data can also remove bias posed by more frequent observations in the raw data </li>
+  <li>Aggregating data can also lessen the number of missing values and the effect of outliers </li>
+</ol>
+
+
 Augment the data
 -	Feature engineering is the process of going from raw data (ex. Date-time) to data that is ready for modeling (ex. Day of the week or month). It can serve multiple purposes:
-<ul>
-<li> </li>
-</ul>
-o	Make the model easier to interpret (ex. binning)
-o	Capture more complex relationships (ex. NNs)
-o	Reduce data redundancy and dimensionality (ex. PCA)
-o	Rescale variables (ex. Standardizing or normalizing)
+<ol>
+  <li>Make the model easier to interpret (ex. binning) </li>
+  <li>Capture more complex relationships (ex. NNs) </li>
+  <li>Reduce data redundancy and dimensionality (ex. PCA) </li>
+  <li>Rescale variables (ex. Standardizing or normalizing) </li>
+</ol>
 -	Different models may have different feature engineering requirements. Some have built-in feature engineering.
 
 
@@ -76,43 +75,42 @@ What is a model?
 -	A machine learning algorithm uses data to automatically learn the rules. It simplifies the complexities of the data into relationships described by the rules. A predictive model is an algorithm that learns the prediction rules.
 What is a good predictive model?
 -	Specifics of the model itself
-<ul>
-<li> </li>
-</ul>
-o	Accurate: Are we making good predictions?
-o	Interpretable: How easy is it to explain how the predictions are made?
+<ol>
+  <li>Accurate: Are we making good predictions? </li>
+  <li>Interpretable: How easy is it to explain how the predictions are made? </li>
+</ol>
 -	The way the model is being deployed
-<ul>
-<li> </li>
-</ul>
-o	Fast: How long does it take to build a model, and how long does the model take to make predictions? 
-o	Scalable: How much longer do we have to wait if we build/predict using a lot more data?
+<ol>
+  <li>Fast: How long does it take to build a model, and how long does the model take to make predictions?  </li>
+  <li>Scalable: How much longer do we have to wait if we build/predict using a lot more data? </li>
+</ol>
+
+
 What is model complexity?
 -	A model is more complex if:
-<ul>
-<li> </li>
-</ul>
-o	It relies on more features to learn and predict (ex. 2 vs 10 features to predict a target)
-o	It relies on more complex feature engineering (ex. Polynomial terms, interactions, or principle components)
-o	It has more computational overhead (ex. A single decision tree vs random forest of 100 trees)
+<ol>
+  <li>It relies on more features to learn and predict (ex. 2 vs 10 features to predict a target) </li>
+  <li>It relies on more complex feature engineering (ex. Polynomial terms, interactions, or principle components) </li>
+  <li>It has more computational overhead (ex. A single decision tree vs random forest of 100 trees) </li>
+</ol>
 -	Opposite of explain ability
 -	Computational overhead
 What is model complexity across the same model?
 -	The same ML algorithm could be made more complex based on the number of parameters or the choice of some hyper-parameters
-<ul>
-<li> </li>
-</ul>
-o	A regression model can have more features, or polynomial terms and interaction terms
-o	A decision tree can have more or less depth
+<ol>
+  <li>A regression model can have more features, or polynomial terms and interaction terms </li>
+  <li>A decision tree can have more or less depth </li>
+</ol>
 -	Making the same algorithm increases the chance of overfitting
 -	"Models have to be simple, but not simplistic" - Einstein
 What is model complexity across different models?
 -	Complexity can also refer to choosing a more complex algorithm, which is generally less efficient (to train and to predict), in addition to being less easy to understand.
-<ul>
-<li> </li>
-</ul>
-o	A neural network is similar to regression but much more complex in its feature engineering
-o	A random forest is similar to a decision tree, but complex because it builds multiple trees
+<ol>
+  <li>A neural network is similar to regression but much more complex in its feature engineering </li>
+  <li>A random forest is similar to a decision tree, but complex because it builds multiple trees </li>
+</ol>
+
+
 How much do we care about explain ability?
 How much do we care about making predictions?
 
@@ -122,13 +120,13 @@ Part 3: Deploying Models
 We have a model and we are ready to use it.
 Model consumption
 -	Its important to know as much as possible how models are to be consumed
-<ul>
-<li> </li>
-</ul>
-o	A model that is consumed by a web app needs to be fast
-o	A model that is used to predict in batch needs to be scalable
-o	A model that updates a dashboard as data streams in may need to be fast and scalable
-o	Is this a good model in terms of accuracy?
+<ol>
+  <li>A model that is consumed by a web app needs to be fast </li>
+  <li>A model that is used to predict in batch needs to be scalable </li>
+  <li>A model that updates a dashboard as data streams in may need to be fast and scalable </li>
+  <li>Is this a good model in terms of accuracy? </li>
+</ol>
+
 
 Part 4: The data science lifecycle
 The choice of a model affects and is affected by:
