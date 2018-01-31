@@ -1,7 +1,7 @@
 Given examples of inputs and the desired categories, predict the outputs of future samples.
 The aim is to learn a mapping from the input to an output whose correct values are provided by a supervisor.
 
-Develop a predictive model based on both input and output data.
+Develop a predictive model based on both input and output data; task driven;
 
 Examples:
 1. Learning associations (Basket analysis):
