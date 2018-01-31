@@ -15,11 +15,11 @@ Part 1: Getting ready
 
 Know your data
 -	Summary statistics
-<ul>
+<ol>
   <li>Percentiles can help identify the range for most of the data. </li>
   <li>Averages and medians can describe central tendency. </li>
   <li>Correlations can indicate strong relations </li>
-</ul>
+</ol>
 -	Visualize the data
 <ul>
 <li> </li>
