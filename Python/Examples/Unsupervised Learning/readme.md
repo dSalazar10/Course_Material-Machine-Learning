@@ -1,4 +1,4 @@
-Given only inputs (no categories), automatically discover representa?ons, correlations, features, structure, etc.
+Given only inputs (no categories), automatically discover representations, correlations, features, structure, etc.
 
 The aim is to find the regularities in the input; density estimation. There is a structure to the input space such that certain patterns occur more often than others, and we want to see what generally happens and what does not. 
 
