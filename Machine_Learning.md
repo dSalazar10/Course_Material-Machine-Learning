@@ -66,39 +66,39 @@ Different models may have different feature engineering requirements. Some have 
 <h1>Part 2: Choosing and tuning models</h1>
 We have our data, an idea of the models we want to build, we completed part 1 and are ready to do some modeling. We have to train (use 75% of data to build model) and test (use 25% to evaluate model) our models. A good model should be able to make predictions on data it wasn't trained with.
 <h2>What is a model?</h2>
--	At a high level, a model is a simplification of something more complex.
--	"All models are wrong, but some are useful." - statistics mantra
--	A machine learning algorithm uses data to automatically learn the rules. It simplifies the complexities of the data into relationships described by the rules. A predictive model is an algorithm that learns the prediction rules.
+At a high level, a model is a simplification of something more complex.
+"All models are wrong, but some are useful." - statistics mantra
+A machine learning algorithm uses data to automatically learn the rules. It simplifies the complexities of the data into relationships described by the rules. A predictive model is an algorithm that learns the prediction rules.
 <h2>What is a good predictive model?</h2>
--	Specifics of the model itself
+Specifics of the model itself
 <ol>
   <li>Accurate: Are we making good predictions? </li>
   <li>Interpretable: How easy is it to explain how the predictions are made? </li>
 </ol>
--	The way the model is being deployed
+The way the model is being deployed
 <ol>
   <li>Fast: How long does it take to build a model, and how long does the model take to make predictions?  </li>
   <li>Scalable: How much longer do we have to wait if we build/predict using a lot more data? </li>
 </ol>
 <h2>What is model complexity?</h2>
--	A model is more complex if:
+A model is more complex if:
 <ol>
   <li>It relies on more features to learn and predict (ex. 2 vs 10 features to predict a target) </li>
   <li>It relies on more complex feature engineering (ex. Polynomial terms, interactions, or principle components) </li>
   <li>It has more computational overhead (ex. A single decision tree vs random forest of 100 trees) </li>
 </ol>
--	Opposite of explain ability
--	Computational overhead
+Opposite of explain ability
+Computational overhead
 <h2>What is model complexity across the same model?</h2>
--	The same ML algorithm could be made more complex based on the number of parameters or the choice of some hyper-parameters
+The same ML algorithm could be made more complex based on the number of parameters or the choice of some hyper-parameters
 <ol>
   <li>A regression model can have more features, or polynomial terms and interaction terms </li>
   <li>A decision tree can have more or less depth </li>
 </ol>
--	Making the same algorithm increases the chance of overfitting
--	"Models have to be simple, but not simplistic" - Einstein
+Making the same algorithm increases the chance of overfitting
+"Models have to be simple, but not simplistic" - Einstein
 <h2>What is model complexity across different models?</h2>
--	Complexity can also refer to choosing a more complex algorithm, which is generally less efficient (to train and to predict), in addition to being less easy to understand.
+Complexity can also refer to choosing a more complex algorithm, which is generally less efficient (to train and to predict), in addition to being less easy to understand.
 <ol>
   <li>A neural network is similar to regression but much more complex in its feature engineering </li>
   <li>A random forest is similar to a decision tree, but complex because it builds multiple trees </li>
@@ -106,7 +106,7 @@ We have our data, an idea of the models we want to build, we completed part 1 an
 
 
 
-<p>Part 3: Deploying Models</p>
+<h1>Part 3: Deploying Models</h1>
 We have a model and we are ready to use it.
 Model consumption
 -	Its important to know as much as possible how models are to be consumed
