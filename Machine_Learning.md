@@ -1,10 +1,3 @@
-Model Development Lifecycle:
-- Define objective: What problem am I solving?
-- Collect and manage data: What information do I need?
-- Build the model: find patterns in the data that leads to a solution.
-- Evaluate and critique the model: Does the model solve my problem?
-- Present results and document: Establish that I can solve the problem, and how.
-- Deploy the model: Doeploy the model to solve the problem in the real world.
 
 Underfitting: too little model capacity
 
@@ -120,6 +113,17 @@ Its important to know as much as possible how models are to be consumed
 
 
 <h1>Part 4: The data science lifecycle</h1>
+
+
+<h2>Lifecycle</h2>
+<ol>
+  <li>Define objective: What problem am I solving?</li>
+  <li>Collect and manage data: What information do I need?</li>
+  <li>Build the model: find patterns in the data that leads to a solution.</li>
+  <li>Evaluate and critique the model: Does the model solve my problem?</li>
+  <li>Present results and document: Establish that I can solve the problem, and how.</li>
+  <li>Deploy the model: Doeploy the model to solve the problem in the real world.</li>
+</ol>
 <h2>The choice of a model affects and is affected by:</h2>
 <ol>
   <li>Whether the model meets the business goals</li>
@@ -129,3 +133,4 @@ Its important to know as much as possible how models are to be consumed
   <li>How fast the model is in making predictions</li>
   <li>How scalable the models is (building and predicting)</li>
 </ol>
+
