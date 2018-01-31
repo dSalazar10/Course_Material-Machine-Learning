@@ -64,12 +64,12 @@ Default Perceptron Classification:
 
 Tuned Perceptron Classification:
 - perceptron = Perceptron(penalty=None, alpha=0.0001, fit_intercept=True,
-                            max_iter=63, tol=None, shuffle=True, verbose=0,
+                            max_iter=56, tol=None, shuffle=True, verbose=0,
                             eta0=1.0, n_jobs=1, random_state=0,
                             class_weight=None, warm_start=False)
-- Number of correct matches: 1267
+- Number of correct matches: 1273
 - Total number of data points: 1348
-- Ratio of correct predictions: 0.939910979228
+- Ratio of correct predictions: 0.944362017804
 
 Decision Tree Classification:
 - Number of correct matches: 896
