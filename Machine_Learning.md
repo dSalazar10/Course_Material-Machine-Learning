@@ -14,8 +14,8 @@ How much do we care about explain ability?
 
 How much do we care about making predictions?
 
-<p>Part 1: Getting ready</p>
-Know your data
+<h1>Part 1: Getting ready</h1>
+<h2>Know your data</h2>
 -	Summary statistics
 <ol>
   <li>Percentiles can help identify the range for most of the data. </li>
@@ -28,7 +28,7 @@ Know your data
   <li>Density plots and histograms show the spread of the data </li>
   <li>Scatter plots can describe bivariate relationships </li>
 </ol>
-Clean your data
+<h2>Clean your data</h2>
 -	Deal with missing values
 <ol>
   <li>Missing data effects some models more than others </li>
@@ -51,7 +51,7 @@ Clean your data
   <li>Aggregating data can also remove bias posed by more frequent observations in the raw data </li>
   <li>Aggregating data can also lessen the number of missing values and the effect of outliers </li>
 </ol>
-Augment the data
+<h2>Augment the data</h2>
 -	Feature engineering is the process of going from raw data (ex. Date-time) to data that is ready for modeling (ex. Day of the week or month). It can serve multiple purposes:
 <ol>
   <li>Make the model easier to interpret (ex. binning) </li>
