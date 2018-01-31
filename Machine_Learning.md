@@ -10,9 +10,11 @@ Underfitting: too little model capacity
 
 Overfitting: too much model capacity
 
+How much do we care about explain ability?
+
+How much do we care about making predictions?
 
 <p>Part 1: Getting ready</p>
-
 Know your data
 -	Summary statistics
 <ol>
@@ -26,8 +28,6 @@ Know your data
   <li>Density plots and histograms show the spread of the data </li>
   <li>Scatter plots can describe bivariate relationships </li>
 </ol>
-
-
 Clean your data
 -	Deal with missing values
 <ol>
@@ -51,8 +51,6 @@ Clean your data
   <li>Aggregating data can also remove bias posed by more frequent observations in the raw data </li>
   <li>Aggregating data can also lessen the number of missing values and the effect of outliers </li>
 </ol>
-
-
 Augment the data
 -	Feature engineering is the process of going from raw data (ex. Date-time) to data that is ready for modeling (ex. Day of the week or month). It can serve multiple purposes:
 <ol>
@@ -66,9 +64,7 @@ Augment the data
 
 
 <p>Part 2: Choosing and tuning models</p>
-
 We have our data, an idea of the models we want to build, we completed part 1 and are ready to do some modeling. We have to train (use 75% of data to build model) and test (use 25% to evaluate model) our models. A good model should be able to make predictions on data it wasn't trained with.
-
 What is a model?
 -	At a high level, a model is a simplification of something more complex.
 -	"All models are wrong, but some are useful." - statistics mantra
@@ -84,8 +80,6 @@ What is a good predictive model?
   <li>Fast: How long does it take to build a model, and how long does the model take to make predictions?  </li>
   <li>Scalable: How much longer do we have to wait if we build/predict using a lot more data? </li>
 </ol>
-
-
 What is model complexity?
 -	A model is more complex if:
 <ol>
@@ -111,12 +105,8 @@ What is model complexity across different models?
 </ol>
 
 
-How much do we care about explain ability?
-How much do we care about making predictions?
-
 
 <p>Part 3: Deploying Models</p>
-
 We have a model and we are ready to use it.
 Model consumption
 -	Its important to know as much as possible how models are to be consumed
@@ -126,6 +116,7 @@ Model consumption
   <li>A model that updates a dashboard as data streams in may need to be fast and scalable </li>
   <li>Is this a good model in terms of accuracy? </li>
 </ol>
+
 
 
 <p>Part 4: The data science lifecycle</p>
