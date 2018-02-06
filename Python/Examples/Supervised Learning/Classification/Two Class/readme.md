@@ -33,7 +33,6 @@ Todo:
 - decision jungle
 - locally deep SVM
 - nueral network
-- comment Decision Tree
 
 Performance review of linear modeling of the digits dataset
 
