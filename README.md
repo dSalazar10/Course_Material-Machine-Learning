@@ -73,4 +73,8 @@ Further Reading:
 
 
  
+Free and Must Reads:
+http://mmds.org/#ver21
+http://gael-varoquaux.info/scikit-learn-tutorial/
+https://seat.massey.ac.nz/personal/s.r.marsland/MLBook.html
 
