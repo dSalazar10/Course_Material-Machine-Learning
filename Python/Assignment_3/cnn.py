@@ -5,7 +5,7 @@ Created on Wed Mar 14 20:45:36 2018
 
 @author: Minh Nguyen
 """
-# Group project
+# Import necessary libraries
 import cv2,sys,argparse,os,glob,time,math,random
 
 from datetime import timedelta
@@ -19,6 +19,8 @@ from tensorflow import set_random_seed
 
 from keras.preprocessing.image import ImageDataGenerator
 from keras import backend as K
+
+# This class is used to get and process dataset
 
 class DataSet(object):
 
@@ -82,6 +84,7 @@ class DataSet(object):
                 self._img_names[start:end], self._cls[start:end])
 
 
+# This function is for load data set from a local directory, resixe and normalize the images. The returned values includes images and a vector of their labels
 # Prepdata
 def load_train(train_path, image_size, classes):
     images = []
@@ -114,7 +117,7 @@ def load_train(train_path, image_size, classes):
     cls = np.array(cls)
     return images, labels, img_names, cls
 
-
+# This function is used to split the dataset to training and validation sets
 def read_train_sets(
     train_path,
     image_size,
@@ -151,46 +154,67 @@ def read_train_sets(
 
     return data_sets
 
+# Create and train model
+seed(1)
+set_random_seed(2)
+batch_size = 32
 
-def imgGen(
-    img,
-    zca=False,
-    rotation=0.,
-    w_shift=0.,
-    h_shift=0.,
-    shear=0.,
-    zoom=0.,
-    h_flip=False,
-    v_flip=False,
-    preprocess_fcn=None,
-    batch_size=9,
-    ):
-    datagen = ImageDataGenerator(
-        zca_whitening=zca,
-        rotation_range=rotation,
-        width_shift_range=w_shift,
-        height_shift_range=h_shift,
-        shear_range=shear,
-        zoom_range=zoom,
-        fill_mode='nearest',
-        horizontal_flip=h_flip,
-        vertical_flip=v_flip,
-        preprocessing_function=preprocess_fcn,
-        data_format=K.image_data_format(),
-        )
+# Prepare input data
 
-    datagen.fit(img)
+classes = [
+    'A',
+    'B',
+    'C',
+    'Five',
+    'Point',
+    'V',
+    ]
+num_classes = len(classes)
 
+# 10% of the data will automatically be used for validation
 
-# CalculateAccuracy
+validation_size = 0.1
+img_size = 100
+num_channels = 3
+train_path = os.path.join(os.getcwd(), 'Marcel-Train')
 
+# We shall load all the training and validation images and labels into memory using openCV and use that during training
+
+data = read_train_sets(train_path, img_size, classes,
+                       validation_size=validation_size)
+
+print 'Complete reading input data. Will Now print a snippet of it'
+print 'Number of files in Training-set:\t\t{}'.format(len(data.train.labels))
+print 'Number of files in Validation-set:\t{}'.format(len(data.valid.labels))
+
+session = tf.Session()
+x = tf.placeholder(tf.float32, shape=[None, img_size, img_size,
+                   num_channels], name='x')
+
+## labels
+y_true = tf.placeholder(tf.float32, shape=[None, num_classes],
+                        name='y_true')
+y_true_cls = tf.argmax(y_true, dimension=1)
+
+# initialize the filters' sizes and number of filters
+filter_size_conv1 = 3
+num_filters_conv1 = 16
+
+filter_size_conv2 = 3
+num_filters_conv2 = 32
+
+filter_size_conv3 = 3
+num_filters_conv3 = 64
+
+fc_layer_size = 80
+
+# Function to initialize weights on the filters and biases for the layers
 def create_weights(shape):
     return tf.Variable(tf.truncated_normal(shape, stddev=0.05))
 
 
 def create_biases(size):
     return tf.Variable(tf.constant(0.05, shape=[size]))
-
 
 def create_convolutional_layer(
     input,
@@ -225,7 +249,7 @@ def create_convolutional_layer(
     layer = tf.nn.relu(layer)
     return layer
 
-
+# Create this layer to flatten the output from the convolutional layers before feed it to the fully connected layer
 def create_flatten_layer(layer):
 
     # We know that the shape of the layer will be [batch_size img_size img_size num_channels]
@@ -243,6 +267,7 @@ def create_flatten_layer(layer):
 
     return layer
 
+# This function is used to create the fully connected layers
 
 def create_fc_layer(
     input,
@@ -264,7 +289,7 @@ def create_fc_layer(
 
     return layer
 
-
+# Print the result of the training to the console
 def show_progress(
     epoch,
     feed_dict_train,
@@ -278,6 +303,48 @@ def show_progress(
     print msg.format(epoch + 1, acc, val_acc, val_loss)
 
 
+# Construct the model
+# This model contains 3 convolutional layers, 1 flattern layer and 2 fully connected layer
+layer_conv1 = create_convolutional_layer(input=x,
+        num_input_channels=num_channels,
+        conv_filter_size=filter_size_conv1,
+        num_filters=num_filters_conv1)
+layer_conv2 = create_convolutional_layer(input=layer_conv1,
+        num_input_channels=num_filters_conv1,
+        conv_filter_size=filter_size_conv2,
+        num_filters=num_filters_conv2)
+
+layer_conv3 = create_convolutional_layer(input=layer_conv2,
+        num_input_channels=num_filters_conv2,
+        conv_filter_size=filter_size_conv3,
+        num_filters=num_filters_conv3)
+
+layer_flat = create_flatten_layer(layer_conv3)
+
+layer_fc1 = create_fc_layer(input=layer_flat,
+                            num_inputs=layer_flat.get_shape()[1:4].num_elements(),
+                            num_outputs=fc_layer_size, use_relu=True)
+
+layer_fc2 = create_fc_layer(input=layer_fc1, num_inputs=fc_layer_size,
+                            num_outputs=num_classes, use_relu=False)
+
+# Optimize the model
+# This part contains code to define cost function and method to minimize it
+y_pred = tf.nn.softmax(layer_fc2, name='y_pred')
+
+y_pred_cls = tf.argmax(y_pred, dimension=1)
+session.run(tf.global_variables_initializer())
+cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits=layer_fc2,
+        labels=y_true)
+cost = tf.reduce_mean(cross_entropy)
+optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(cost)
+correct_prediction = tf.equal(y_pred_cls, y_true_cls)
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+session.run(tf.global_variables_initializer())
+total_iterations = 0
+saver = tf.train.Saver()
+
+# Train the model with specified number of iterations and epochs
 def train(num_iteration):
     global total_iterations
 
@@ -294,129 +361,11 @@ def train(num_iteration):
             saver.save(session, './hand_gestures_model')
     total_iterations += num_iteration
 
-
-
-"""
-This file is where we construct and train the model
-"""
-
-seed(1)
-set_random_seed(2)
-batch_size = 32
-
-# Prepare input data
-
-classes = [
-    'A',
-    'B',
-    'C',
-    'Five',
-    'Point',
-    'V',
-    ]
-num_classes = len(classes)
-
-# 20% of the data will automatically be used for validation
-
-validation_size = 0.1
-img_size = 100
-num_channels = 3
-train_path = os.path.join(os.getcwd(), 'Marcel-Train')
-
-# We shall load all the training and validation images and labels into memory using openCV and use that during training
-
-data = read_train_sets(train_path, img_size, classes,
-                       validation_size=validation_size)
-
-print 'Complete reading input data. Will Now print a snippet of it'
-print 'Number of files in Training-set:\t\t{}'.format(len(data.train.labels))
-print 'Number of files in Validation-set:\t{}'.format(len(data.valid.labels))
-
-session = tf.Session()
-x = tf.placeholder(tf.float32, shape=[None, img_size, img_size,
-                   num_channels], name='x')
-
-## labels
-y_true = tf.placeholder(tf.float32, shape=[None, num_classes],
-                        name='y_true')
-y_true_cls = tf.argmax(y_true, dimension=1)
-
-##Network graph params
-# filter_size_conv1 = 3
-# num_filters_conv1 = 32
-#
-# filter_size_conv2 = 3
-# num_filters_conv2 = 32
-#
-# filter_size_conv3 = 3
-# num_filters_conv3 = 64
-filter_size_conv1 = 3
-num_filters_conv1 = 16
-
-filter_size_conv2 = 3
-num_filters_conv2 = 32
-
-filter_size_conv3 = 3
-num_filters_conv3 = 64
-
-filter_size_conv4 = 5
-num_filters_conv4 = 128
-
-fc_layer_size = 80
-
-layer_conv1 = create_convolutional_layer(input=x,
-        num_input_channels=num_channels,
-        conv_filter_size=filter_size_conv1,
-        num_filters=num_filters_conv1)
-layer_conv2 = create_convolutional_layer(input=layer_conv1,
-        num_input_channels=num_filters_conv1,
-        conv_filter_size=filter_size_conv2,
-        num_filters=num_filters_conv2)
-
-layer_conv3 = create_convolutional_layer(input=layer_conv2,
-        num_input_channels=num_filters_conv2,
-        conv_filter_size=filter_size_conv3,
-        num_filters=num_filters_conv3)
-
-#
-# layer_conv4 = create_convolutional_layer(input=layer_conv3,
-#                                          num_input_channels=num_filters_conv3,
-#                                          conv_filter_size=filter_size_conv4,
-#                                          num_filters=num_filters_conv4)
-
-layer_flat = create_flatten_layer(layer_conv3)
-
-layer_fc1 = create_fc_layer(input=layer_flat,
-                            num_inputs=layer_flat.get_shape()[1:4].num_elements(),
-                            num_outputs=fc_layer_size, use_relu=True)
-
-layer_fc2 = create_fc_layer(input=layer_fc1, num_inputs=fc_layer_size,
-                            num_outputs=num_classes, use_relu=False)
-
-y_pred = tf.nn.softmax(layer_fc2, name='y_pred')
-
-y_pred_cls = tf.argmax(y_pred, dimension=1)
-session.run(tf.global_variables_initializer())
-cross_entropy = \
-    tf.nn.softmax_cross_entropy_with_logits(logits=layer_fc2,
-        labels=y_true)
-cost = tf.reduce_mean(cross_entropy)
-optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(cost)
-correct_prediction = tf.equal(y_pred_cls, y_true_cls)
-accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-session.run(tf.global_variables_initializer())
-total_iterations = 0
-saver = tf.train.Saver()
 train(num_iteration=10000)
 
+# Training Epoch 73 --- Training Accuracy: 100.0%, Validation Accuracy: 100.0%,  Validation Loss: 0.040
 
-
-# First, pass the path of the image
-
-"""
-This file is intended to use for live presentation.
-When we pass a image of a gesture in, we get probabilities it belongs to each class
-"""
+# This part is for testing the accuracy of predicting each image belonging to each class
 
 dir_path = os.path.dirname(os.path.realpath('__file__'))
 image_path = 'Marcel-Test/Point/uniform/Point-uniform19.ppm'
@@ -442,7 +391,8 @@ images = np.multiply(images, 1.0 / 255.0)
 
 x_batch = images.reshape(1, image_size, image_size, num_channels)
 
-## Let us restore the saved model
+# Restore and use the previously trained model to predict the a gesture
+# Let us restore the saved model
 
 sess = tf.Session()
 
@@ -479,11 +429,14 @@ result = sess.run(y_pred, feed_dict=feed_dict_testing)
 print result
 
 
-# Prepare input data
+"""
+INFO:tensorflow:Restoring parameters from ./hand_gestures_model
+[[  1.29497790e-08   2.80204028e-12   7.82370171e-19   7.57055648e-04
+    9.99241590e-01   1.33256015e-06]]
+    """
 
-"""
-Code to calculate the average accuracy rate when applying the trained model on testing data is stored here
-"""
+# This code is to calculate the average accuracy rate when applying the trained model on testing dataset
+# Prepare input data
 def load_test(train_path, image_size, classes):
     images = []
     labels = []
@@ -574,5 +527,17 @@ print acc
 temp = 0
 
 """
+Going to read training images
+Now going to read A files (Index: 0)
+Now going to read B files (Index: 1)
+Now going to read C files (Index: 2)
+Now going to read Five files (Index: 3)
+Now going to read Point files (Index: 4)
+Now going to read V files (Index: 5)
+INFO:tensorflow:Restoring parameters from ./hand_gestures_model
 0.486911
+
+This ~49% is average accuracy when using both uniform and complex data set.
+When using uniform dataset, our model can get up to 53% accuracy rate.
 """
+
