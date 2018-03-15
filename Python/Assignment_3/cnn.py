@@ -3,9 +3,9 @@
 """
 Created on Wed Mar 14 20:45:36 2018
 
-@author: Daniel Salazar
+@author: Minh Nguyen
 """
-# Minh Nguyen, Pradeep Ravi, Stuti Patel, Vijaykumar Mamidala, and Daniel Salazar
+# Group project
 import cv2,sys,argparse,os,glob,time,math,random
 
 from datetime import timedelta
