@@ -84,7 +84,8 @@ class DataSet(object):
                 self._img_names[start:end], self._cls[start:end])
 
 
-# This function is for load data set from a local directory, resixe and normalize the images. The returned values includes images and a vector of their labels
+# This function is for load data set from a local directory, resixe and normalize the images.
+# The returned values includes images and a vector of their labels
 # Prepdata
 def load_train(train_path, image_size, classes):
     images = []
