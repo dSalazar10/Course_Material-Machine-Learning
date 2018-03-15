@@ -1,6 +1,10 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
+"""
+Created on Wed Mar 14 20:45:36 2018
 
+@author: Daniel Salazar
+"""
 """
 This is the preprocessing portion:
 - read the dataset 'usa-training.json'
