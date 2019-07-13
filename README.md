@@ -25,22 +25,24 @@ Common deep learning applications include:
 
 http://citeseer.ist.psu.edu/index
 
-Required Reading:
+## Required Reading:
 - Introduction to Machine Learning, Third Edition By: E. Alpaydin
 - A Course in Machine Learning (online) By: H. Daumé
 
-Optonal Reading:
+## Optonal Reading:
 - Pattern Recogniton and Machine Learning By: C. Bishop
 - Machine Learning: a Probabilistic Perspective By: K. Murphy
 - Coding the Matrix: Linear Algebra through Applications to Computer Science By: P. Klein
 
-Further Reading:
-- (Python)
+## Further Reading:
+
+### Python
 - Mastering matplotlib By: Mcgreggor D.
 - Learning pandas - Python Data Discovery and Analysis Made Easy By: Heydt M.
 - Learning Python By: Lutz M.
 - Python 3 Text Processing with NLTK 3 Cookbook By: Perkins J.
-- (Machine Learning)
+
+### Machine Learning
 - Artificial Intelligence: A Modern Approach By: Russel S., Norvig P.
 - Deep Learning By: Goodfellow I., Bengio Y., Courville A.
 - How to Create a Mind By: Kurzweil R.
