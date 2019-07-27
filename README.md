@@ -76,11 +76,11 @@ http://citeseer.ist.psu.edu/index
 
  
 Free and Must Reads:
-http://mmds.org/#ver21
-http://gael-varoquaux.info/scikit-learn-tutorial/
-https://seat.massey.ac.nz/personal/s.r.marsland/MLBook.html
-https://www.kaggle.com/c/word2vec-nlp-tutorial#part-1-for-beginners-bag-of-words
-https://web.stanford.edu/class/cs124/lec/naivebayes.pdf
-http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
-http://adataanalyst.com/scikit-learn/countvectorizer-sklearn-example/
-https://towardsdatascience.com/natural-language-processing-on-multiple-columns-in-python-554043e05308
+  - http://mmds.org/#ver21
+  - http://gael-varoquaux.info/scikit-learn-tutorial/
+  - https://seat.massey.ac.nz/personal/s.r.marsland/MLBook.html
+  - https://www.kaggle.com/c/word2vec-nlp-tutorial#part-1-for-beginners-bag-of-words
+  - https://web.stanford.edu/class/cs124/lec/naivebayes.pdf
+  - http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
+  - http://adataanalyst.com/scikit-learn/countvectorizer-sklearn-example/
+  - https://towardsdatascience.com/natural-language-processing-on-multiple-columns-in-python-554043e05308
