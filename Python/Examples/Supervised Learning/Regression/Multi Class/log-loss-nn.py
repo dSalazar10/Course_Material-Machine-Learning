@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import utilities
+from utilities import Utilities
 class NeuralNetwork:
   d_ = True
   def __init__(self, W=np.array(0, dtype=float), b=0, epoch=1000, learn_rate=0.5):
@@ -19,21 +21,7 @@ class NeuralNetwork:
     self.l_ = learn_rate
     np.random.seed(143)
 
-  def test_train_split(self, data):
-    """
-    This will keep 90% of the data for training and 10% for testing.
-    There are better ratios.
-
-    Input:
-    * data: labeled data (collection of features and targets)
-
-    Output:
-    * returns a tuple containing 2/3 training data and 1/3 testing data
-    """
-    # Get a random sample
-    sample = np.random.choice(data.index, size=int(len(data)*0.75), replace=False)
-    # train_data, test_data
-    return data.iloc[sample], data.drop(sample)
+  
 
   def sigmoid(self, x):
     # Return sigmoid(x)
@@ -107,12 +95,6 @@ class NeuralNetwork:
     accuracy = np.mean(predictions == y_t)
     return accuracy
 
-  def one_hot_encoder(self, data, col, ax=1):
-    # Make dummy variables for rank
-    one_hot_data = pd.concat([data, pd.get_dummies(data[col], prefix=col)], axis=ax)
-    # Drop the previous rank column
-    return one_hot_data.drop(col, axis=1)
-
 # Test usage
 if 1:
   """
@@ -123,19 +105,20 @@ if 1:
   5. Repeat from 1) until stopping criterion is satisfied
   """
   clf = NeuralNetwork()
+  ut = Utilities()
 
   # Pulling the data into a tableu
   data = pd.read_csv('student_data.csv')
 
   # Drill-down the rank column
-  processed_data = clf.one_hot_encoder(data, "rank")
+  processed_data = ut.one_hot_encoder(data, "rank")
 
   # Scaling the columns
   processed_data['gre'] = processed_data['gre']/800
   processed_data['gpa'] = processed_data['gpa']/4.0
 
   # Split the data 2/3 train and 1/3 test
-  train_data, test_data = clf.test_train_split(processed_data)
+  train_data, test_data = ut.test_train_split(processed_data)
   
   # Splitting inputs and labels
   features = train_data.drop('admit', axis=1)
